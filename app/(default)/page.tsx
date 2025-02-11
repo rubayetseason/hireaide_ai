@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Home - Simple",
-  description: "Page description",
+  title: "HireAide.ai",
+  description:
+    "With HireAide.ai, your hiring team is empowered to make smarter, faster, and more equitable decisions—transforming your recruitment process and ensuring success at every step.",
 };
 
 import Hero from "@/components/hero-home";
