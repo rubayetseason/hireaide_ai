@@ -83,7 +83,7 @@ const Modal = () => {
       </DialogTrigger>
       <DialogContent
         className={
-          "lg:max-w-screen-lg overflow-y-scroll lg:overflow-auto max-h-screen"
+          "h-[90%] lg:max-w-screen-lg overflow-y-scroll lg:overflow-auto max-h-screen"
         }
       >
         <DialogHeader>
