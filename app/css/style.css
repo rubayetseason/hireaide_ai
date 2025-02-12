@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:is(.dark *));
+
 /* Additional styles */
 @import './additional-styles/utility-patterns.css' layer(components);
 @import './additional-styles/theme.css';
@@ -7,6 +9,8 @@
 @plugin "@tailwindcss/forms" {
   strategy: base;
 }
+
+@plugin 'tailwindcss-animate';
 
 @theme {
   --font-inter: Inter, sans-serif;
@@ -204,4 +208,15 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+}
+
+:root {
+  --radius: 0.6rem;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
