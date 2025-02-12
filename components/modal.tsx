@@ -13,6 +13,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "./ui/input";
+import { sendEmail } from "@/lib/send-email";
 
 const schema = z.object({
   fullname: z.string().min(1, "Full Name is required"),
@@ -37,6 +38,8 @@ const schema = z.object({
 
 const Modal = () => {
   const [showCalendly, setShowCalendly] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -64,17 +67,19 @@ const Modal = () => {
 
   const onSubmit = (data: any) => {
     console.log("Form Submitted:", data);
+    sendEmail({ ...data });
+    setOpen(false);
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button
           type="button"
           className="btn group mb-4 w-full bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
         >
           <span className="relative inline-flex items-center">
-            Coming Soon
+            Join Waitlist
             <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
               -&gt;
             </span>
@@ -87,7 +92,7 @@ const Modal = () => {
         }
       >
         <DialogHeader>
-          <DialogTitle>Edit Profile</DialogTitle>
+          <DialogTitle>Join Waitlist</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
@@ -229,7 +234,7 @@ const Modal = () => {
 
           <DialogFooter className="mt-5">
             <button className="btn text-white bg-blue-600" type="submit">
-              Save changes
+              Submit
             </button>
           </DialogFooter>
         </form>

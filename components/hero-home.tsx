@@ -14,9 +14,9 @@ export default function HeroHome() {
       <PageIllustration />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
-        <div className="pb-12 pt-32 md:pb-10 md:pt-40">
+        <div className="pb-12 pt-24 md:pb-10 md:pt-32">
           {/* Section header */}
-          <div className="pb-12 text-center md:pb-16">
+          <div className="pb-10 text-center md:pb-16">
             <div
               className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]"
               data-aos="zoom-y-out"
@@ -91,7 +91,7 @@ export default function HeroHome() {
                   data-aos="zoom-y-out"
                   data-aos-delay={450}
                 >
-                 <Modal></Modal>
+                  <Modal></Modal>
                 </div>
               </div>
             </div>

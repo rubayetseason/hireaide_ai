@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
+import { Toaster } from "react-hot-toast";
 
 export default function DefaultLayout({
   children,
@@ -25,9 +26,12 @@ export default function DefaultLayout({
   return (
     <>
       <Header />
-
+      <Toaster
+        position="top-center"
+        containerClassName="!z-[999999999]"
+        reverseOrder={false}
+      />
       <main className="grow">{children}</main>
-
       <Footer border={true} />
     </>
   );
